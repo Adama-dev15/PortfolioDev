@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Isotope from "isotope-layout";
+import $ from "jquery";
+
+const handlePortfolioWaypointEnter = () => {
+  let portfolioContent = $(".portfolio-container");
+  if (portfolioContent.length) {
+    $(window).on("scroll", function () {
+      if (
+        $(this).scrollTop() + $(this).height() >=
+        portfolioContent.offset().top
+      ) {
+        var portfolioIsotope = new Isotope(".portfolio-container", {
+          itemSelector: ".portfolio-item",
+          layoutMode: "fitRows",
+        });
+
+        $("#portfolio-flters li").on("click", function () {
+          $("#portfolio-flters li").removeClass("active");
+          $(this).addClass("active");
+
+          portfolioIsotope.arrange({ filter: $(this).data("filter") });
+        });
+
+        // Détacher l'écouteur une fois qu'il a été déclenché
+        $(window).off("scroll");
+      }
+    });
+  }
+};
 
 const PortfolioView = () => {
+  useEffect(() => {
+    handlePortfolioWaypointEnter();
+  }, []);
+
   return (
     <div>
       <section id="portfolio" className="portfolio section-bg">
