@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import Isotope from "isotope-layout";
 import $ from "jquery";
+import initAOS from "../../../Animation";
 
 const handlePortfolioWaypointEnter = () => {
+  /*   useEffect(() => {
+    initAOS();
+  }, []); */
+
   let portfolioContent = $(".portfolio-container");
   if (portfolioContent.length) {
     $(window).on("scroll", function () {
@@ -32,12 +37,13 @@ const handlePortfolioWaypointEnter = () => {
 const PortfolioView = () => {
   useEffect(() => {
     handlePortfolioWaypointEnter();
+    initAOS();
   }, []);
 
   return (
     <div>
       <section id="portfolio" className="portfolio section-bg">
-        <div className="container" /* data-aos="fade-up" */>
+        <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Portfolio</h2>
             <p>
@@ -51,7 +57,7 @@ const PortfolioView = () => {
           <div className="row">
             <div
               className="col-lg-12 d-flex justify-content-center"
-              /* data-aos="fade-up" */
+              data-aos="fade-up"
               data-aos-delay="100"
             >
               <ul id="portfolio-flters">

@@ -1,8 +1,13 @@
 // Fichier SkillView.jsx
 import React, { useEffect } from "react";
 import { handleSkillWaypointEnter } from "./LogicSkill";
+import initAOS from "../../../Animation";
 
 const SkillView = () => {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       // Récupérer la position de la section des compétences
@@ -44,7 +49,7 @@ const SkillView = () => {
           </div>
 
           <div className="row skills-content">
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="fade-up">
               <div className="progress">
                 <span className="skill">
                   HTML <i className="val">100%</i>
@@ -85,7 +90,7 @@ const SkillView = () => {
               </div>
             </div>
 
-            <div className="col-lg-6">
+            <div className="col-lg-6" data-aos="fade-up">
               <div className="progress">
                 <span className="skill">
                   PHP <i className="val">80%</i>

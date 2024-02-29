@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
+import initAOS from "../../../Animation";
 
 const FactsView = () => {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   const [startCounting, setStartCounting] = useState(false);
 
   useEffect(() => {
@@ -75,7 +80,7 @@ const FactsView = () => {
 
   return (
     <div>
-      <section id="facts" className="facts">
+      <section id="facts" className="facts" data-aos="fade-up">
         <div className="container">
           <div className="section-title">
             <h2>Facts</h2>

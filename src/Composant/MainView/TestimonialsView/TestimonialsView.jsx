@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
 import Swiper from "swiper";
+import initAOS from "../../../Animation";
 //import "swiper/css/swiper.css";
 
 const TestimonialsView = () => {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   useEffect(() => {
     const testimonialsSwiper = new Swiper(".testimonials-slider", {
       loop: true,
@@ -41,7 +46,7 @@ const TestimonialsView = () => {
           <div className="testimonials-slider swiper">
             <div className="swiper-wrapper">
               {/* Première diapositive */}
-              <div className="swiper-slide">
+              <div className="swiper-slide" data-aos="fade-up">
                 <div className="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-1.jpg"
@@ -62,7 +67,7 @@ const TestimonialsView = () => {
               </div>
 
               {/* Deuxième diapositive */}
-              <div className="swiper-slide">
+              <div className="swiper-slide" data-aos="fade-up">
                 <div className="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-2.jpg"
@@ -83,7 +88,7 @@ const TestimonialsView = () => {
               </div>
 
               {/* Troisième diapositive */}
-              <div className="swiper-slide">
+              <div className="swiper-slide" data-aos="fade-up">
                 <div className="testimonial-item">
                   <img
                     src="assets/img/testimonials/testimonials-3.jpg"

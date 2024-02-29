@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import initAOS from "../../../Animation";
 
 const ResumeView = () => {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   return (
     <div>
       <section id="resume" className="resume">
-        <div className="container" /* data-aos="fade-up" */>
+        <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Resume</h2>
             <p>

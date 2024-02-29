@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import initAOS from "../../../Animation";
 
 const ServiceView = () => {
+  useEffect(() => {
+    initAOS();
+  }, []);
+
   return (
     <div>
       <section id="services" className="services">
-        <div className="container" /* data-aos="fade-up" */>
+        <div className="container" data-aos="fade-up">
           <div className="section-title">
             <h2>Services</h2>
             <p>
@@ -50,7 +55,7 @@ const ServiceView = () => {
 
             <div
               className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
-              /* data-aos="zoom-in" */
+              data-aos="zoom-in"
               data-aos-delay="200"
             >
               <div className="icon-box iconbox-orange ">
@@ -82,7 +87,7 @@ const ServiceView = () => {
 
             <div
               className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
-              /* data-aos="zoom-in" */
+              data-aos="zoom-in"
               data-aos-delay="300"
             >
               <div className="icon-box iconbox-pink">
@@ -114,7 +119,7 @@ const ServiceView = () => {
 
             <div
               className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
-              /* data-aos="zoom-in" */
+              data-aos="zoom-in"
               data-aos-delay="100"
             >
               <div className="icon-box iconbox-yellow">
@@ -146,7 +151,7 @@ const ServiceView = () => {
 
             <div
               className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
-              /* data-aos="zoom-in" */
+              data-aos="zoom-in"
               data-aos-delay="200"
             >
               <div className="icon-box iconbox-red">
@@ -178,7 +183,7 @@ const ServiceView = () => {
 
             <div
               className="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
-              /* data-aos="zoom-in" */
+              data-aos="zoom-in"
               data-aos-delay="300"
             >
               <div className="icon-box iconbox-teal">
